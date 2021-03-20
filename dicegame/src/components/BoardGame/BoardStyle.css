@@ -1,0 +1,6 @@
+.board{
+    border: 1px solid blue;
+    height: 85vh;
+    width: 90vw;
+    margin: auto auto;
+}

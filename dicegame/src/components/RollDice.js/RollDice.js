@@ -2,15 +2,15 @@ import React from 'react';
 import './RollDice.css';
 import Dice from '../Dice/Dice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faDice } from '@fortawesome/free-solid-svg-icons';
 
   
 class RollDice extends React.Component{ 
   
   // Face numbers passes as default props 
   static defaultProps = { 
-    sides : ['one', 'two', 'three',  
-             'four', 'five', 'six'] 
+    sides : ['One', 'Two', 'Three',  
+             'Four', 'Five', 'Six'] 
   } 
   constructor(props){ 
     super(props) 
@@ -42,8 +42,8 @@ class RollDice extends React.Component{
   } 
   
   render(){ 
-    const handleBtn = this.state.rolling ? 'RollDice-rolling' : ''
-    const {die1, die2, rolling} = this.state 
+    const handleBtn = this.state.rolling ? 'RollDice-rolling' : '';
+    const {die1, die2, rolling} = this.state ;
     return( 
       <div className='RollDice'> 
         <div className='RollDice-container'> 
@@ -53,6 +53,7 @@ class RollDice extends React.Component{
         <button className={handleBtn} 
                 disabled={this.state.rolling}  
                 onClick={this.roll}> 
+                <FontAwesomeIcon icon={faDice} />
           {this.state.rolling ? 'Rolling' : 'Roll Dice!'} 
         </button> 
       </div> 

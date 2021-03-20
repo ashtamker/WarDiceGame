@@ -16,7 +16,7 @@
     padding:1.5em; 
     border: 0px; 
     border-radius: 10px; 
-    color:white; 
+    color:orange; 
     background-color:black; 
     margin-top: 3em; 
     align-self: center; 
@@ -28,8 +28,8 @@
   } 
     
   .RollDice-rolling{ 
-    border: 0px; 
+    border: none; 
     border-radius: 10px; 
-    background-color:darkslateblue !important; 
+    background-color:#333 !important; 
     opacity:0.7
   } 

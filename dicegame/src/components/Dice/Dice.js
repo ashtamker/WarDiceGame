@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dice.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faDice } from '@fortawesome/free-solid-svg-icons';
 
 class Dice extends React.Component{
     render(){ 
@@ -9,8 +9,9 @@ class Dice extends React.Component{
           
         // Using font awesome icon to show  
         // the exactnumber of dots 
-        return <i className={`Die fas faDice-${face} 
-                  ${rolling && 'Die-shaking'}`}/> 
+        return <i className={`Die fas faDice${face} 
+                  ${rolling && 'Die-shaking'}`} />
+                   
       }
 
 

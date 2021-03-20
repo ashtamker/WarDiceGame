@@ -3,11 +3,11 @@ import BoardGame from './components/BoardGame/BoardGame';
 
 
 
+
 function App() {
   return (
     <div>
    <BoardGame />
-   
    </div>
   )
 }

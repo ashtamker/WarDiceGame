@@ -1,6 +1,6 @@
 import React from 'react';
 import './RollDice.css';
-import Dice from '../Dice/Dice';
+import Die from '../Dice/Die';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDice } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,8 +9,8 @@ class RollDice extends React.Component{
   
   // Face numbers passes as default props 
   static defaultProps = { 
-    sides : ['One', 'Two', 'Three',  
-             'Four', 'Five', 'Six'] 
+    sides : ['one', 'two', 'three',  
+             'four', 'five', 'six'] 
   } 
   constructor(props){ 
     super(props) 
@@ -47,8 +47,8 @@ class RollDice extends React.Component{
     return( 
       <div className='RollDice'> 
         <div className='RollDice-container'> 
-          <Dice face={die1} rolling={rolling}/> 
-          <Dice face={die2} rolling={rolling}/> 
+          <Die face={die1} rolling={rolling}/> 
+          <Die face={die2} rolling={rolling}/> 
         </div> 
         <button className={handleBtn} 
                 disabled={this.state.rolling}  
@@ -62,3 +62,4 @@ class RollDice extends React.Component{
 } 
   
 export default RollDice;
+

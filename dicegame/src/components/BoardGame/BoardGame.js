@@ -1,6 +1,7 @@
 import React from 'react';
 import './BoardStyle.css';
 import RollDice from '../RollDice.js/RollDice';
+import GetDice from '../Dice/GetDice';
 
 
 const setupData = {
@@ -19,7 +20,9 @@ class BoardGame extends React.Component {
         const {playerOneScore, playerTwoScore , targetScore} = this.state;
         return (
             <div className="board">
+                <GetDice />
                 <RollDice />
+                
 
             </div>
         )

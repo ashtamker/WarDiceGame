@@ -8,10 +8,10 @@ class MainBoard extends React.Component {
     constructor(props) {
       super();
   
-      this.state = this.myState();
+      this.state = this.setupState();
     }
   
-    myState = () => {
+    setupState = () => {
       return {
         dice: [1, 1],
         Playername: ['Player1', 'Player2'],
@@ -26,7 +26,7 @@ class MainBoard extends React.Component {
   
     newGame = () => {
       console.log('new game')
-         this.setState(this.myState());
+         this.setState(this.setupState());
     }
   
     componentDidUpdate() {
@@ -65,7 +65,7 @@ class MainBoard extends React.Component {
     
     }
   
-  
+
     holdTurn = () => {
       let index;
       if (this.state.turnPlayer1) {

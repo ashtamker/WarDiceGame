@@ -37,6 +37,7 @@ body {
     background-color: orange;
     font-weight: bold;
     margin: 5px;
+    border: 1px solid #333;
   }
   
   .diceDisplay {

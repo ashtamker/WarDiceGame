@@ -17,25 +17,17 @@ class MainBoard extends React.Component {
         Playername: ['Player1', 'Player2'],
         score: [0, 0],
         currentScore: [0, 0],
-        target: 50,
+        target: 15,
         turnPlayer1: true,
       }
     }
-  
 
   
     newGame = () => {
       console.log('new game')
          this.setState(this.setupState());
     }
-  
-    componentDidUpdate() {
-      if (this.state.score[0] >= this.state.target) {     
-       window.alert('Player 1 Wins')
-      } else if (this.state.score[1] >= this.state.target) {
-       window.alert('Player 2 Wins')
-      }
-    }
+ 
   
     changeTurns = () => {
       return (this.state.turnPlayer1) ? this.setState({ turnPlayer1: false }) : this.setState({ turnPlayer1: true })
@@ -77,6 +69,14 @@ class MainBoard extends React.Component {
       this.setState({ score: array })
       this.setState({ currentScore: [0, 0] })
       this.changeTurns();
+    }
+     
+    componentDidUpdate() {
+      if (this.state.score[0] >= this.state.target) {     
+       window.alert('Player 1 Wins')
+      } else if (this.state.score[1] >= this.state.target) {
+       window.alert('Player 2 Wins')
+      }
     }
   
     render() {

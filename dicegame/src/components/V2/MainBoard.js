@@ -92,7 +92,6 @@ class MainBoard extends React.Component {
           <PlayerArea key={this.state.Playername[1]} name={this.state.Playername[1]} 
           score={this.state.score[1]} current={this.state.currentScore[1]} 
           myclass={!this.state.turnPlayer1} winner={this.state.Player2Win} />
-  
         </div>
       )
     }

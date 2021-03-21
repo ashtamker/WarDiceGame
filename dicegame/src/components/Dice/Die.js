@@ -9,12 +9,11 @@ class Die extends React.Component{
         
         // Using font awesome icon to show  
         // the exactnumber of dots 
-        return (  
-        <i className='Die fas faDiceThree'></i>
-            //  <div><i className={`Die fas fa-dice-${face}
-            //             ${rolling && 'Die-shaking'}`}/>
+        return (
+             <div><i className={`Die fas fa-dice-${face}
+                        ${rolling && 'Die-shaking'}`}/>
         
-            //       </div> 
+                  </div> 
         )  
     } 
 

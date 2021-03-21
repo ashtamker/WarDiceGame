@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardGame from './components/BoardGame/BoardGame';
+// import BoardGame from './components/BoardGame/BoardGame';
 import MainBoard from './components/V2/MainBoard';
 // import RollDice from './components/RollDice/RollDice';
 

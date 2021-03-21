@@ -13,12 +13,12 @@ class MainBoard extends React.Component {
   
     myState = () => {
       return {
-        turnPlayer1: true,
         dice: [1, 1],
-        name: ['Player1', 'Player2'],
+        Playername: ['Player1', 'Player2'],
         score: [0, 0],
         currentScore: [0, 0],
         target: 50,
+        turnPlayer1: true,
       }
     }
   
@@ -37,11 +37,11 @@ class MainBoard extends React.Component {
       }
     }
   
-    toggleTurns = () => {
+    changeTurns = () => {
       return (this.state.turnPlayer1) ? this.setState({ turnPlayer1: false }) : this.setState({ turnPlayer1: true })
     }
   
-    addCurrent = (num) => {
+    addThisRoundScore = (num) => {
       let index;
       if (this.state.turnPlayer1) {
         index = 0
@@ -57,10 +57,10 @@ class MainBoard extends React.Component {
       this.setState({ dice: [d1, d2] })
       if (d1 === d2 &&  d1 === 6) {
         this.setState({ currentScore: [0,0] })
-        this.toggleTurns();
+        this.changeTurns();
       } else {
         let sum = d1 + d2;
-        this.addCurrent(sum);
+        this.addThisRoundScore(sum);
       }
     
     }
@@ -76,20 +76,20 @@ class MainBoard extends React.Component {
       array[index] += curent[index]
       this.setState({ score: array })
       this.setState({ currentScore: [0, 0] })
-      this.toggleTurns();
+      this.changeTurns();
     }
   
     render() {
       return (
         <div className="App">
-          <PlayerArea key={this.state.name[0]} name={this.state.name[0]}
+          <PlayerArea key={this.state.Playername[0]} name={this.state.Playername[0]}
            score={this.state.score[0]} current={this.state.currentScore[0]}
             myclass={this.state.turnPlayer1} winner={this.state.Player1Win}/>
           <Btn name="New Game" onClick={this.newGame} />
           <DiceFace dice1={this.state.dice[0]} dice2={this.state.dice[1]} />
           <Btn name="Roll Dice" onClick={this.rollTheDice} />
           <Btn name="Hold" onClick={this.holdTurn} />
-          <PlayerArea key={this.state.name[1]} name={this.state.name[1]} 
+          <PlayerArea key={this.state.Playername[1]} name={this.state.Playername[1]} 
           score={this.state.score[1]} current={this.state.currentScore[1]} 
           myclass={!this.state.turnPlayer1} winner={this.state.Player2Win} />
   

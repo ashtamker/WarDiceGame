@@ -13,7 +13,7 @@ class MainBoard extends React.Component {
   
     myState = () => {
       return {
-        isPlayer1: true,
+        turnPlayer1: true,
         dice: [1, 1],
         name: ['Player1', 'Player2'],
         score: [0, 0],
@@ -38,12 +38,12 @@ class MainBoard extends React.Component {
     }
   
     toggleTurns = () => {
-      return (this.state.isPlayer1) ? this.setState({ isPlayer1: false }) : this.setState({ isPlayer1: true })
+      return (this.state.turnPlayer1) ? this.setState({ turnPlayer1: false }) : this.setState({ turnPlayer1: true })
     }
   
     addCurrent = (num) => {
       let index;
-      if (this.state.isPlayer1) {
+      if (this.state.turnPlayer1) {
         index = 0
       } else { index = 1 }
       let array = this.state.currentScore
@@ -55,7 +55,7 @@ class MainBoard extends React.Component {
       let d1 = Math.floor(Math.random() * 6 + 1);
       let d2 = Math.floor(Math.random() * 6 + 1);
       this.setState({ dice: [d1, d2] })
-      if (d1 === d2) {
+      if (d1 === d2 &&  d1 === 6) {
         this.setState({ currentScore: [0,0] })
         this.toggleTurns();
       } else {
@@ -68,7 +68,7 @@ class MainBoard extends React.Component {
   
     holdTurn = () => {
       let index;
-      if (this.state.isPlayer1) {
+      if (this.state.turnPlayer1) {
         index = 0
       } else { index = 1 }
       let array = this.state.score
@@ -84,14 +84,14 @@ class MainBoard extends React.Component {
         <div className="App">
           <PlayerArea key={this.state.name[0]} name={this.state.name[0]}
            score={this.state.score[0]} current={this.state.currentScore[0]}
-            myclass={this.state.isPlayer1} winner={this.state.Player1Win}/>
+            myclass={this.state.turnPlayer1} winner={this.state.Player1Win}/>
           <Btn name="New Game" onClick={this.newGame} />
           <DiceFace dice1={this.state.dice[0]} dice2={this.state.dice[1]} />
           <Btn name="Roll Dice" onClick={this.rollTheDice} />
           <Btn name="Hold" onClick={this.holdTurn} />
           <PlayerArea key={this.state.name[1]} name={this.state.name[1]} 
           score={this.state.score[1]} current={this.state.currentScore[1]} 
-          myclass={!this.state.isPlayer1} winner={this.state.Player2Win} />
+          myclass={!this.state.turnPlayer1} winner={this.state.Player2Win} />
   
         </div>
       )

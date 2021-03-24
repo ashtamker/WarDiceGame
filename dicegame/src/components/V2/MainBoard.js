@@ -24,7 +24,6 @@ class MainBoard extends React.Component {
 
   
     newGame = () => {
-      console.log('new game')
          this.setState(this.setupState());
     }
  
